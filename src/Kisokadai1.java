@@ -46,7 +46,7 @@ public class Kisokadai1 {
 		for(int i=1;i<=x;i++){
 			for(int j=1;j<=y;j++){
 				System.out.printf(" %5d",i*j);
-			}System.out.println();break;
+			}System.out.println();
 		}
 		}else{System.out.println("指定された範囲(半角数字)で入力して下さい");continue;}
 

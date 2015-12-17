@@ -30,7 +30,7 @@ public class Kisokadai2 {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			if (checkStringNumber(kai)) {
+			if(checkStringNumber(kai)) {
 
 				int x = Integer.parseInt(kai);
 				if (x == ans) {
@@ -47,27 +47,11 @@ public class Kisokadai2 {
 			continue;
 		}
 		System.out.println("ゲーム終了！答えは" + ans + "でした。");
-		System.out.println("もう一度の場合は１を終了する時はそれ以外の数字を入力して下さい");
-		BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
-		String a=null;
-		try {
-			a = br.readLine();
-		} catch (IOException e) {
-			// TODO 自動生成された catch ブロック
-			e.printStackTrace();
-		}
-		if(checkStringNumber(a)) {
-			int b=Integer.parseInt(a);
-			if(b==1){
-				continue;
-			}else{break;
-			}
-			}else{continue;
-		}
+		break;
 		}
 	}
 	public static boolean checkStringNumber(String number) {
-		Pattern p = Pattern.compile("^[0-9]*$||^[０-９]*$");
+		Pattern p = Pattern.compile("^[0-9]*$");
 		Matcher m = p.matcher(number);
 
 		return m.find();
