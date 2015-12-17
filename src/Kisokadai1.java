@@ -53,6 +53,7 @@ public class Kisokadai1 {
 		}else{System.out.println("指定された範囲(半角数字)で入力して下さい");continue;}
 		break;}
 	}
+
 	public static boolean checkStringNumber(String abr) {
 		Pattern p = Pattern.compile("^[0-9]*$");
 		Matcher m = p.matcher(abr);

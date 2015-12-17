@@ -17,8 +17,8 @@ public class Kisokadai2 {
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		while(true){
+public static void main(String[] args) {
+	while(true){
 		System.out.println("数当てゲームHigh&Low！");
 		int ans = new java.util.Random().nextInt(99) + 1;
 		for (int i = 10; i > 0; i--) {
@@ -31,23 +31,22 @@ public class Kisokadai2 {
 				e.printStackTrace();
 			}
 			if(checkStringNumber(kai)) {
-
+				try{
 				int x = Integer.parseInt(kai);
-				if (x == ans) {
-					System.out.println("正解!!");
-					break;
-				} else if (x < ans) {
-					System.out.println("低すぎます");
-				} else {
-					System.out.println("高すぎます");
+					if (x == ans) {
+						System.out.println("正解!!");
+						break;
+					} else if (x < ans) {
+						System.out.println("低すぎます");
+					} else {
+						System.out.println("高すぎます");
+					}
+				}catch(NumberFormatException e){
+					System.out.println("1～100まででお願いします。");i++;continue;
 				}
-			} else {
-				System.out.println("半角数字でお願いします。");i++;
+				}else{System.out.println("1～100まででお願いします。");i++;continue;}
 			}
-			continue;
-		}
-		System.out.println("ゲーム終了！答えは" + ans + "でした。");
-		break;
+		System.out.println("ゲーム終了！答えは" + ans + "でした。");break;
 		}
 	}
 	public static boolean checkStringNumber(String number) {
